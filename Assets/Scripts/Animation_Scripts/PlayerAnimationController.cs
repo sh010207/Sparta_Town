@@ -20,7 +20,8 @@ public class PlayerAnimationController : AnimationController
 
     private void Start()
     {
-        gameController.OnMoveEvent += Move;
+        if(gameController)
+            gameController.OnMoveEvent += Move;
     }
 
     private void Move(Vector2 obj)

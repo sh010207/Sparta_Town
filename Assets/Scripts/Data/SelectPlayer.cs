@@ -7,11 +7,13 @@ using UnityEngine;
 public class SelectPlayer : MonoBehaviour
 {
     public Players players;
+
     public SpriteRenderer spriteRenderer;
     public SelectPlayer[] selectPlayers; 
+
     public void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
         if (GameManager.instance.currentPlayer == players) OnSelect();
         else OnDeSelect();
@@ -33,5 +35,10 @@ public class SelectPlayer : MonoBehaviour
     private void OnMouseUpAsButton()
     {
         GameManager.instance.currentPlayer = players;
+        OnSelect(); 
+        for(int i = 0; i < selectPlayers.Length; i++)
+        {
+            if (selectPlayers[i] != this)selectPlayers[i].OnDeSelect();
+        }
     }
 }

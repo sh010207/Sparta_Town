@@ -1,14 +1,15 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ResultPlayerNameInput :MonoBehaviour
 {
-	public InputField inputName;
+	public TMP_InputField inputName;
 	private string playerName = null;
 
     private void Awake()
     {
-        playerName = inputName.GetComponent<InputField>().text;
+        playerName = inputName.GetComponent<TMP_InputField>().text;
     }
 
     public void InputName()

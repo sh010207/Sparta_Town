@@ -123,8 +123,8 @@ GameObject:
   - component: {fileID: 5927165916193820268}
   - component: {fileID: 147630559789873682}
   m_Layer: 0
-  m_Name: Player
-  m_TagString: Player
+  m_Name: Fox
+  m_TagString: Fox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
