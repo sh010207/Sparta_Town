@@ -12,10 +12,4 @@ public class StartButton:MonoBehaviour
     {
         SceneManager.LoadScene("CharacterSelectScene");
     }
-
-    public void MainScene()
-    {
-        //input.PlayerInputNameSave();
-        //SceneManager.LoadScene("MainScene");
-    }
 }
