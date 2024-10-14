@@ -17,11 +17,13 @@ public class ReSpawn : MonoBehaviour
     {
         textMeshPro = GetComponentInChildren<TextMeshPro>();
 
+
         player = Instantiate(charPrefabs[(int)GameManager.instance.currentPlayer]);
         player.transform.position = transform.position;
         followCamera.SetTarget(player.transform);
 
         playerName = GameManager.instance.CurrentPlayerNameLoad();
         player.GetComponentInChildren<TextMeshPro>().text = playerName;
+        Debug.Log(playerName);
     }
 }

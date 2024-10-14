@@ -38,7 +38,7 @@ public class ResultPlayerNameInput :MonoBehaviour
         {
             isBtn = true;
             playerName = playerinputName.text;
-            
+            GameManager.instance.CurrentPlayerNameSave(playerName);
             MainLoadScene();
         }
         else
