@@ -1,33 +1,55 @@
 using TMPro;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ResultPlayerNameInput :MonoBehaviour
 {
-	public TMP_InputField inputName;
-	private string playerName = null;
+    [SerializeField] private TMP_InputField playerinputName;
+    public Button button;
+
+    public bool isBtn;
+    private string playerName = null;
 
     private void Awake()
     {
-        playerName = inputName.GetComponent<TMP_InputField>().text;
-    }
-
-    public void InputName()
-	{
-        playerName = inputName.text;
-		PlayerPrefs.SetString("CurrentPlayerName", playerName);
-	}
-
-    private void Update()
-    {
-        if(playerName.Length > 0 &&  Input.GetKeyDown(KeyCode.Return))
-        {
-            InputName();
-        }
+        playerName = playerinputName.GetComponentInChildren<TMP_InputField>().text;
     }
 
     private void Start()
     {
-        Debug.Log(playerName);
+        button = GetComponentInChildren<Button>();
+
+        switch(button.interactable)
+        {
+            case true:
+                isBtn = true;
+                break;
+            case false:
+                isBtn = false;
+                break;
+        }
+    }
+
+    // ÀúÀå
+    public void PlayerInputNameSave()
+    {
+        if(playerinputName.text.Length > 1 && playerinputName.text.Length < 10)
+        {
+            isBtn = true;
+            playerName = playerinputName.text;
+            GameManager.instance.CurrentPlayerNameSave(playerName);
+            MainLoadScene();
+        }
+        else
+        {
+            isBtn=false;
+        }
+    }
+
+    public void MainLoadScene()
+    {
+        SceneManager.LoadScene("MainScene");
+
     }
 }

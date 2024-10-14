@@ -696,8 +696,6 @@ GameObject:
   - component: {fileID: 281180553}
   - component: {fileID: 281180552}
   - component: {fileID: 281180551}
-  - component: {fileID: 281180554}
-  - component: {fileID: 281180555}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -769,9 +767,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 281180555}
-        m_TargetAssemblyTypeName: StartButton, Assembly-CSharp
-        m_MethodName: MainScene
+      - m_Target: {fileID: 816570366}
+        m_TargetAssemblyTypeName: ResultPlayerNameInput, Assembly-CSharp
+        m_MethodName: PlayerInputNameSave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -819,30 +817,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 281180549}
   m_CullTransparentMesh: 1
---- !u!114 &281180554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 281180549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4775eeb3d72d2174fbe12d151321a741, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &281180555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 281180549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48cb17b9947b57e4cbda598682036272, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &292231115
 GameObject:
   m_ObjectHideFlags: 0
@@ -1359,6 +1333,7 @@ GameObject:
   m_Component:
   - component: {fileID: 816570364}
   - component: {fileID: 816570365}
+  - component: {fileID: 816570366}
   m_Layer: 0
   m_Name: DisplaySelect
   m_TagString: Untagged
@@ -1396,6 +1371,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objFox: {fileID: 1350157654}
   objFlog: {fileID: 219521478}
+--- !u!114 &816570366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816570363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86e583bbb37c6fb468b632145fb23867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerinputName: {fileID: 857263374}
+  button: {fileID: 281180551}
+  isBtn: 0
 --- !u!1 &857263372
 GameObject:
   m_ObjectHideFlags: 0
@@ -1408,7 +1398,6 @@ GameObject:
   - component: {fileID: 857263376}
   - component: {fileID: 857263375}
   - component: {fileID: 857263374}
-  - component: {fileID: 857263377}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -1572,19 +1561,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 857263372}
   m_CullTransparentMesh: 1
---- !u!114 &857263377
-MonoBehaviour:
+--- !u!1 &1117453865
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 857263372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86e583bbb37c6fb468b632145fb23867, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputName: {fileID: 857263374}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1117453866}
+  m_Layer: 0
+  m_Name: SceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1117453866
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117453865}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 584, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1350157654
 GameObject:
   m_ObjectHideFlags: 0
@@ -1752,7 +1759,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Nick Name..
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2108,3 +2115,4 @@ SceneRoots:
   - {fileID: 236089921}
   - {fileID: 816570364}
   - {fileID: 2117271799}
+  - {fileID: 1117453866}
